@@ -2,7 +2,7 @@ SHELL := /bin/bash
 
 push:
 	@branch=$(shell git branch --show-current); \
-	if [ "$(branch)" = "main" ]; then \
+	if [ "$$branch" = "main" ]; then \
 		echo "On main branch, proceeding with tag push."; \
 		git tag $(tag); \
 		git push origin refs/tags/$(tag); \
